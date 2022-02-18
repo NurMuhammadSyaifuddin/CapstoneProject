@@ -65,27 +65,27 @@ class SeeMoreActivity : AppCompatActivity() {
                 when(it.extras?.getString(EXTRA_DATA)){
                     EXTRA_VALUE[0] -> {
                         binding.toolbar.title = EXTRA_VALUE[0]
-                        getMovies("popular")
+                        getMovies(TYPE_MOVIE[0])
                     }
                     EXTRA_VALUE[1] -> {
                         binding.toolbar.title = EXTRA_VALUE[1]
-                        getMovies("nowplaying")
+                        getMovies(TYPE_MOVIE[1])
                     }
                     EXTRA_VALUE[2] -> {
                         binding.toolbar.title = EXTRA_VALUE[2]
-                        getMovies("upcoming")
+                        getMovies(TYPE_MOVIE[2])
                     }
                     EXTRA_VALUE[3] -> {
                         binding.toolbar.title = EXTRA_VALUE[3]
-                        getTvShow("popular")
+                        getTvShow(TYPE_TVSHOW[0])
                     }
                     EXTRA_VALUE[4] -> {
                         binding.toolbar.title = EXTRA_VALUE[4]
-                        getTvShow("airingtoday")
+                        getTvShow(TYPE_TVSHOW[1])
                     }
                     EXTRA_VALUE[5] -> {
                         binding.toolbar.title = EXTRA_VALUE[5]
-                        getTvShow("toprate")
+                        getTvShow(TYPE_TVSHOW[2])
                     }
                 }
             }
@@ -96,7 +96,7 @@ class SeeMoreActivity : AppCompatActivity() {
         tvShowAdapter.onClick { listenerTvShow(it) }
 
         when(type){
-            "popular" -> {
+            TYPE_TVSHOW[0] -> {
                 viewModelTvShow.getPopularTvShow(type).observe(this){ tvshow ->
                     if (tvshow != null){
                         when(tvshow){
@@ -113,7 +113,7 @@ class SeeMoreActivity : AppCompatActivity() {
                     }
                 }
             }
-            "airingtoday" -> {
+            TYPE_TVSHOW[1] -> {
                 viewModelTvShow.getAiringTodayTvShow(type).observe(this){ tvshow ->
                     if (tvshow != null){
                         when(tvshow){
@@ -130,7 +130,7 @@ class SeeMoreActivity : AppCompatActivity() {
                     }
                 }
             }
-            "toprate" -> {
+            TYPE_TVSHOW[2] -> {
                 viewModelTvShow.getPopularTvShow(type).observe(this){ tvshow ->
                     if (tvshow != null){
                         when(tvshow){
@@ -159,7 +159,7 @@ class SeeMoreActivity : AppCompatActivity() {
         movieAdapter.onClick { listenerMovie(it) }
 
         when(type){
-            TYPE[0] -> {
+            TYPE_MOVIE[0] -> {
                 viewModelMovie.getPopularMovie(type).observe(this){ movie ->
                     if (movie != null){
                         when(movie){
@@ -176,7 +176,7 @@ class SeeMoreActivity : AppCompatActivity() {
                     }
                 }
             }
-            TYPE[1] -> {
+            TYPE_MOVIE[1] -> {
                 viewModelMovie.getNowPlayingMovie(type).observe(this){ movie ->
                     if (movie != null){
                         when(movie){
@@ -193,7 +193,7 @@ class SeeMoreActivity : AppCompatActivity() {
                     }
                 }
             }
-            TYPE[2] -> {
+            TYPE_MOVIE[2] -> {
                 viewModelMovie.getUpComingMovie(type).observe(this){ movie ->
                     if (movie != null){
                         when(movie){
@@ -226,6 +226,7 @@ class SeeMoreActivity : AppCompatActivity() {
     companion object{
         const val EXTRA_DATA = "extra_data"
         val EXTRA_VALUE = arrayOf("Popular Movie", "Now Playing Movie", "Up Coming Movie", "Popular Tv Show", "Airing Today Tv Show", "Top Rate Tv Show")
-        val TYPE = arrayOf("popular", "nowplaying", "upcoming")
+        val TYPE_MOVIE = arrayOf("popular", "nowplaying", "upcoming")
+        val TYPE_TVSHOW = arrayOf("popular", "airingtoday", "toprate")
     }
 }

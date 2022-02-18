@@ -1,12 +1,15 @@
 package com.project.capstoneproject.ui.login
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignIn.getSignedInAccountFromIntent
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -139,7 +142,8 @@ class LoginActivity : AppCompatActivity() {
 
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent
-        startActivityForResult(signInIntent, RC_SIGN_IN)
+        launchGoogleSignIn.launch(signInIntent)
+//        startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
     private fun showPasswordMinimalAlert(isNotValid: Boolean) {
@@ -151,11 +155,19 @@ class LoginActivity : AppCompatActivity() {
         binding.edtEmail.error = if (isNotValid) getString(R.string.email_not_valid) else null
     }
 
+    private val launchGoogleSignIn =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val task = getSignedInAccountFromIntent(result.data)
+                handleSignInResult(task)
+            }
+        }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == RC_SIGN_IN) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            val task = getSignedInAccountFromIntent(data)
             handleSignInResult(task)
         }
     }

@@ -17,6 +17,7 @@ import com.project.core.utils.Type
 import com.project.favorite.databinding.FragmentFavoriteMovieBinding
 import com.project.favorite.di.favoriteModule
 import org.koin.core.context.loadKoinModules
+import org.koin.core.context.unloadKoinModules
 
 class FavoriteMovieFragment : Fragment() {
 
@@ -103,6 +104,7 @@ class FavoriteMovieFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        unloadKoinModules(favoriteModule)
         binding.rvFavoriteMovie.adapter = null
         _binding = null
     }

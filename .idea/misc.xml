@@ -5,6 +5,22 @@
       <map>
         <entry key="..\:/CapstoneProject/app/src/main/res/layout/activity_login.xml" value="0.13043478260869565" />
         <entry key="..\:/CapstoneProject/app/src/main/res/layout/loading_auth.xml" value="0.17074275362318841" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/app/src/main/res/drawable/bg_btn_black.xml" value="0.1635" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/app/src/main/res/drawable/bg_dialog.xml" value="0.1085" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/app/src/main/res/drawable/bg_dialog_content.xml" value="0.1085" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/app/src/main/res/drawable/ic_baseline_arrow_back_sign_up.xml" value="0.1085" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/app/src/main/res/drawable/rounded_text.xml" value="0.1635" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/app/src/main/res/layout/activity_detail.xml" value="0.10916919959473151" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/app/src/main/res/layout/activity_setting.xml" value="0.17074275362318841" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/app/src/main/res/layout/dialog_success_create_account.xml" value="0.17074275362318841" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/app/src/main/res/layout/loading_auth.xml" value="0.22447916666666667" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/core/src/main/res/layout/item_list_data.xml" value="0.17074275362318841" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/core/src/main/res/layout/item_list_genre.xml" value="0.17074275362318841" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/core/src/main/res/layout/item_list_place_holder.xml" value="0.17074275362318841" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/core/src/main/res/layout/item_list_top_cast.xml" value="0.17074275362318841" />
+        <entry key="..\:/PROJECT/DICODING/ANDROID/MADE/SUBMISSION AKHIR/CapstoneProject/user_profile/src/main/res/layout/fragment_user.xml" value="0.10916919959473151" />
       </map>
     </option>
   </component>

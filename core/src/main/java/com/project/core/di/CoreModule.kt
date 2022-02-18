@@ -46,8 +46,15 @@ val networkModule = module {
             .add(hostname, BuildConfig.CERTIFICATE_PINNING_1)
             .add(hostname, BuildConfig.CERTIFICATE_PINNING_2)
             .build()
-        OkHttpClient.Builder()
-            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+
+        val httpClient = OkHttpClient.Builder()
+
+        if (BuildConfig.DEBUG){
+            val logging = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+            httpClient.addInterceptor(logging)
+        }
+
+        httpClient
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
             .certificatePinner(certificatePinner)
